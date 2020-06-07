@@ -6,7 +6,7 @@ import os
 import tensorflow as tf
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Conv2D,BatchNormalization,MaxPooling2D,Flatten,Dense,Dropout
-tf.config.set_visible_devices([], 'GPU')
+# tf.config.set_visible_devices([], 'GPU')
 # path to your dataset
 path = "data/"
 image_size = (150,150)
@@ -89,6 +89,6 @@ EPOCHS = 10
 history=model.fit(X_train,y_train,epochs=EPOCHS, validation_data = (X_test,y_test))
 
 model_name = 'model_updated.h5'
-path = 'model' + '/' + model_name
+path = '/content/gdrive/My Drive/models/mask-detector/model' + '/' + model_name
 #save the model
 model.save(path)
